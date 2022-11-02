@@ -5,10 +5,10 @@ import { userUpdated } from "./usersSlice";
 
 function EditUser() {
   const { pathname } = useLocation();
-  const userId = pathname.replace("/edit-user/", "");
+  const userId = parseInt(pathname.replace("/ EditUser/", ""));
 
   const user = useSelector((state) =>
-    state.users.find((user) => user.id === userId)
+    state.users.entities.find((user) => user.id === userId)
   );
 
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ function EditUser() {
       );
 
       setError(null);
-      navigate("/");
+      navigate("/UserList");
     } else {
       setError("Fill in all fields");
     }

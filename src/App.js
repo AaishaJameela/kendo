@@ -9,9 +9,9 @@ export default function App() {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<UserList />}>
-            <Route path="blogs" element={<AddUser />} />
-            <Route path="contact" element={<EditUser />} />
+          <Route exact path="/" element={<UserList />}>
+            <Route exact path="AddUser" element={<AddUser />} />
+            <Route exact path="EditUser" element={<EditUser />} />
           </Route>
         </Routes>
       </div>
