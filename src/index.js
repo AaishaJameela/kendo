@@ -1,22 +1,22 @@
-import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { configureStore } from "@reduxjs/toolkit";
-import usersReducer from "./features/users/usersSlice";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "./index.css";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-
-const store = configureStore({
-  reducer: {
-    users: usersReducer,
-  },
-});
+import store from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
-    ,
   </React.StrictMode>
 );
+
+reportWebVitals();
